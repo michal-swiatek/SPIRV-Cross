@@ -19,7 +19,7 @@
 #  2. The MIT License, found at <http://opensource.org/licenses/MIT>.
 #
 
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.22)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -36,16 +36,16 @@ include(GNUInstallDirs)
 option(SPIRV_CROSS_EXCEPTIONS_TO_ASSERTIONS "Instead of throwing exceptions assert" OFF)
 option(SPIRV_CROSS_SHARED "Build the C API as a single shared library." OFF)
 option(SPIRV_CROSS_STATIC "Build the C and C++ API as static libraries." ON)
-option(SPIRV_CROSS_CLI "Build the CLI binary. Requires SPIRV_CROSS_STATIC." ON)
-option(SPIRV_CROSS_ENABLE_TESTS "Enable SPIRV-Cross tests." ON)
+option(SPIRV_CROSS_CLI "Build the CLI binary. Requires SPIRV_CROSS_STATIC." OFF)
+option(SPIRV_CROSS_ENABLE_TESTS "Enable SPIRV-Cross tests." OFF)
 
 option(SPIRV_CROSS_ENABLE_GLSL "Enable GLSL support." ON)
-option(SPIRV_CROSS_ENABLE_HLSL "Enable HLSL target support." ON)
-option(SPIRV_CROSS_ENABLE_MSL "Enable MSL target support." ON)
-option(SPIRV_CROSS_ENABLE_CPP "Enable C++ target support." ON)
-option(SPIRV_CROSS_ENABLE_REFLECT "Enable JSON reflection target support." ON)
-option(SPIRV_CROSS_ENABLE_C_API "Enable C API wrapper support in static library." ON)
-option(SPIRV_CROSS_ENABLE_UTIL "Enable util module support." ON)
+option(SPIRV_CROSS_ENABLE_HLSL "Enable HLSL target support." OFF)
+option(SPIRV_CROSS_ENABLE_MSL "Enable MSL target support." OFF)
+option(SPIRV_CROSS_ENABLE_CPP "Enable C++ target support." OFF)
+option(SPIRV_CROSS_ENABLE_REFLECT "Enable JSON reflection target support." OFF)
+option(SPIRV_CROSS_ENABLE_C_API "Enable C API wrapper support in static library." OFF)
+option(SPIRV_CROSS_ENABLE_UTIL "Enable util module support." OFF)
 
 option(SPIRV_CROSS_SANITIZE_ADDRESS "Sanitize address" OFF)
 option(SPIRV_CROSS_SANITIZE_MEMORY "Sanitize memory" OFF)
@@ -55,7 +55,7 @@ option(SPIRV_CROSS_SANITIZE_UNDEFINED "Sanitize undefined" OFF)
 option(SPIRV_CROSS_NAMESPACE_OVERRIDE "" "Override the namespace used in the C++ API.")
 option(SPIRV_CROSS_FORCE_STL_TYPES "Force use of STL types instead of STL replacements in certain places. Might reduce performance." OFF)
 
-option(SPIRV_CROSS_SKIP_INSTALL "Skips installation targets." OFF)
+option(SPIRV_CROSS_SKIP_INSTALL "Skips installation targets." ON)
 
 option(SPIRV_CROSS_WERROR "Fail build on warnings." OFF)
 option(SPIRV_CROSS_MISC_WARNINGS "Misc warnings useful for Travis runs." OFF)
